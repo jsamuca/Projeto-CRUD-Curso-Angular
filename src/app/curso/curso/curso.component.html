@@ -1,0 +1,45 @@
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-tittle">Curso</h3>
+        <div class="form-group">
+            <label for="search" class="label">Nome:</label>
+            <input class='form-control mt-3' type="text" id="search">
+            <button class='btn btn-primary mt-3'>Pesquisar</button>
+        </div>
+        <div class="table-responsive mt-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Código</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Instrutor</th>
+                        <th scope="col">Local</th>
+                        <th scope="col">Carga Horária</th>
+                        <th scope="col">Data Início</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let curso of cursos">
+                        <tr>
+                            <th scope="row"><input type="radio" name="curso" [value]="curso.codigo" (click)="onSelect($event)"></th>
+                            <td>{{curso.codigo}}</td>
+                            <td>{{curso.nome}}</td>
+                            <td>{{curso.instrutor}}</td>
+                            <td>{{curso.local}}</td>
+                            <td>{{curso.cargaHoraria}}</td>
+                            <td>{{curso.dataInicio | date: 'shortDate':'DD/MM/YYYY'}}</td>
+                        </tr>
+
+                    </ng-container>
+                </tbody>
+            </table>
+        </div>
+        <div class="d-flex mt-3">
+            <button class="btn btn-primary me-3" (click)="incluir()">Incluir</button>
+            <button class="btn btn-primary me-3" (click)="alterar()" [disabled]="hasCursoIdSelecionado">Alterar</button>
+            <button class="btn btn-primary me-3" (click)="excluir()" [disabled]="hasCursoIdSelecionado">Excluir</button>
+        </div>
+
+    </div>
+</div>
