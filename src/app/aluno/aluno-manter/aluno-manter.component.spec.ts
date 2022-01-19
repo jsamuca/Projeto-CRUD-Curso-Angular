@@ -8,9 +8,8 @@ describe('AlunoManterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AlunoManterComponent ]
-    })
-    .compileComponents();
+      declarations: [AlunoManterComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

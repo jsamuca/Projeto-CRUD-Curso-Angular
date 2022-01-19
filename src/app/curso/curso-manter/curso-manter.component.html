@@ -4,35 +4,35 @@
         <form [formGroup]="cursoForm">
             <div class="form-group mb-3">
                 <label for="nome" class="label">Nome:</label>
-                <input class='form-control mt-3' type="text" id="nome" formControlName="nome">
+                <input class="form-control mt-3" type="text" id="nome" formControlName="nome" />
             </div>
             <div class="form-group mb-3">
                 <label for="instrutor" class="label">Instrutor:</label>
-                <input class='form-control mt-3' type="text" id="instrutor" formControlName="instrutor">
+                <input class="form-control mt-3" type="text" id="instrutor" formControlName="instrutor" />
             </div>
             <div class="form-group mb-3">
                 <label for="local" class="label">Local:</label>
-                <input class='form-control mt-3' type="text" id="local" formControlName="local">
+                <input class="form-control mt-3" type="text" id="local" formControlName="local" />
             </div>
             <div class="row mb-3">
                 <div class="form-group col">
                     <label for="carga-horario" class="label">Carga Horária:</label>
-                    <input class='form-control mt-3' type="number" id="carga-horario" min="1" formControlName="cargaHoraria">
+                    <input class="form-control mt-3" type="number" id="carga-horario" min="1" formControlName="cargaHoraria" />
                 </div>
                 <div class="form-group col">
                     <label for="data-inicio" class="label">Data Início:</label>
-                    <input class='form-control mt-3' type="date" id="data-inicio" formControlName="dataInicio">
+                    <input class="form-control mt-3" type="date" id="data-inicio" formControlName="dataInicio" />
                 </div>
-
             </div>
             <div class="d-flex mt-3">
-                <button class="btn btn-primary me-3" (click)="incluir()" *ngIf="!hasId">Incluir</button>
-                <button class="btn btn-primary me-3" (click)="alterar()" *ngIf="hasId">Alterar</button>
+                <button class="btn btn-primary me-3" (click)="incluir()" *ngIf="!hasId">
+          Incluir
+        </button>
+                <button class="btn btn-primary me-3" (click)="alterar()" *ngIf="hasId">
+          Alterar
+        </button>
                 <button class="btn btn-primary me-3" (click)="voltar()">Voltar</button>
             </div>
         </form>
     </div>
 </div>
-<p>
-    {{ cursoForm.value | json }}
-</p>

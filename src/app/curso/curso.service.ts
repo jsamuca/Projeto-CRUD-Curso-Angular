@@ -1,4 +1,3 @@
-import { observable } from './../../../node_modules/rxjs/src/internal/symbol/observable';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -22,9 +21,9 @@ export class CursoService {
     private http: HttpClient
   ) { }
 
-    consultar(nome: string): Observable<any>
+    consultar(nome: string): Observable<Curso[]>
   {
-    return this.http.get(`https://cors-anywhere.herokuapp.com/https://stormy-badlands-29216.herokuapp.com/api/curso/consultar/${nome}`); 
+    return this.http.get<Curso[]>(`https://cors-anywhere.herokuapp.com/https://stormy-badlands-29216.herokuapp.com/api/curso/consultar/${nome}`); 
   }
 
     incluir(curso: Curso)

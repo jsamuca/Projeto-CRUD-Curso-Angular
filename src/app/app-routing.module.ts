@@ -7,57 +7,78 @@ import { AlunoComponent } from './aluno/aluno/aluno.component';
 import { MatriculaComponent } from './matricula/matricula/matricula.component';
 import { NgModule } from '@angular/core';
 import { CursoManterComponent } from './curso/curso-manter/curso-manter.component';
+import { AlunoManterComponent } from './aluno/aluno-manter/aluno-manter.component';
+import { MatriculaManterComponent } from './matricula/matricula-manter/matricula-manter.component';
 
 const routes: Routes = [
-
   {
     path: 'curso',
-    children:[
+    children: [
       {
-        path:'incluir',
+        path: 'incluir',
         component: CursoManterComponent,
       },
       {
-        path:'alterar/:id/:nome',
+        path: 'alterar/:id/:nome',
         component: CursoManterComponent,
       },
       {
-        path:'',
-        pathMatch:'full',
+        path: '',
+        pathMatch: 'full',
         component: CursoComponent,
-      }
-
-  ]
+      },
+    ],
   },
 
   {
     path: 'layout',
     component: LayoutComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
 
   {
     path: 'aluno',
-    component: AlunoComponent,
-    pathMatch: 'full'
+    children: [
+      {
+        path: 'incluir',
+        component: AlunoManterComponent,
+      },
+      {
+        path: 'alterar/:id/:nome',
+        component: AlunoManterComponent,
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        component: AlunoComponent,
+      },
+    ],
   },
-  
+
   {
-    path: 'Matricula',
-    component: MatriculaComponent,
-    pathMatch: 'full'
+    path: 'matricula',
+    children: [
+      {
+        path: 'incluir',
+        component: MatriculaManterComponent,
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        component: MatriculaComponent,
+      },
+    ],
   },
 
   {
     path: '',
     component: HomeComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
 ];
 
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -13,6 +13,7 @@ import { CursoManterComponent } from './curso/curso-manter/curso-manter.componen
 import { HttpClientModule } from '@angular/common/http';
 import { AlunoManterComponent } from './aluno/aluno-manter/aluno-manter.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatriculaManterComponent } from './matricula/matricula-manter/matricula-manter.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatriculaComponent,
     CursoManterComponent,
     AlunoManterComponent,
+    MatriculaManterComponent,
   ],
   imports: [
     BrowserModule,
